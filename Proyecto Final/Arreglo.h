@@ -13,5 +13,6 @@ public:
 	void mostrar(Arreglo arreglo); // Muestra el arreglo final
 	void burbuja(int arreglo[], int n); // El arreglo sera la estructura creada por Numal, Valor[]; y n sera el valor X de numal
 	bool binarySearch(int arr[], int left, int right, int b); // right sera la variable x declarada en Numal y left sera 0
+	int busqueda_fuerza_bruta(int arreglo[], int tamano, int valor_buscado);
 }; 
 

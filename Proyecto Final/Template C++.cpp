@@ -12,25 +12,28 @@ int main()
 
     arreglo.asigarr();
     arreglo.mostrar(arreglo);
-    arreglo.burbuja(arreglo.arrnum,x);
+
+    arreglo.burbuja(arreglo.arrnum, 10);
+    cout << endl << "Arreglo ordenado: " << endl;
     arreglo.mostrar(arreglo);
-    arreglo.binarySearch(arreglo.arrnum, 0, x, numb);
+
+
+
+    arreglo.busqueda_fuerza_bruta(arreglo.arrnum, x, numb);
     cout << endl;
 
     arreglo2.asigarr();
     arreglo2.mostrar(arreglo2);
     arreglo2.burbuja(arreglo2.arrnum, x);
-    arreglo3.mostrar(arreglo3);
-    arreglo2.binarySearch(arreglo2.arrnum, 0, x, numb);
-    arreglo.mostrar(arreglo);
-    
+    arreglo2.mostrar(arreglo2);
+    arreglo2.busqueda_fuerza_bruta(arreglo2.arrnum, x, numb);
     cout << endl;
 
     arreglo3.asigarr();
     arreglo3.mostrar(arreglo3);
     arreglo3.burbuja(arreglo3.arrnum, x);
     arreglo3.mostrar(arreglo3);
-    arreglo3.binarySearch(arreglo3.arrnum, 0, x, numb);
+    arreglo3.busqueda_fuerza_bruta(arreglo3.arrnum, x, numb);
     cout << endl;
 
     lista.i.asignum(lista.i.num);
