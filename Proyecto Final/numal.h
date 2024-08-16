@@ -14,5 +14,6 @@ public:
 	void mostrar(int* num); // funcion Mostrar valores asignados
 	void valpunt(int* num);
 	void valreal(int* val);
+	void grafica(int num);
 };
 

@@ -11,6 +11,10 @@ public:
 	}; // Crea la estructura de un nodo de lista
 	//int busqresfb, busqresfb2, busqresfb3;
 	int busqresbs;
+	int oplist = 0; // Contador de operaciones para Fuerza Bruta y ordenamiento burbuja
+	int oplist2 = 0; // Contador de operaciones para Ordenamiento Rápido y ordenamiento burbuja
+	int oplist3 = 0; // Contador de operaciones para Busqueda Binaria y ordenamiento burbuja
+
 	numal i; // Llama a la clase para crear los 20 valores, asignarles valor, y quiza mostrarlos
 
 	Nodo* listn = NULL; // Crea el puntero para usarlo en las funciones
@@ -39,5 +43,6 @@ public:
 
 	void burbuja(int arreglo[], int n); // El arreglo sera la estructura creada por Numal, Valor[]; y n sera el valor X de numal
 	bool binarySearch(int arr[], int left, int right, int b); // right sera la variable x declarada en Numal y left sera 0
+	void BusquedaBinaria(Nodo* lista, int numb);
 };
 

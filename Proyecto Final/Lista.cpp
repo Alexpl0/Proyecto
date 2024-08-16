@@ -13,6 +13,7 @@ void Lista::insertarLista(Nodo*& listn, int n) // Inserta valores en orden
 
     Nodo* aux1 = listn;
     Nodo* aux2 = 0;
+    oplist++;
 
     //Ordenamiento
 //Se recorre el auxiliar hasta encontrar el lugar donde la posicion sea correcta de ingresar el nuevo nodo
@@ -20,17 +21,20 @@ void Lista::insertarLista(Nodo*& listn, int n) // Inserta valores en orden
     {
         aux2 = aux1;
         aux1 = aux1->siguiente; //recorre el auxiliar
+        oplist++;
     }
 
     //Para el primer elemento de la lista
     if (listn == aux1)
     {
         listn = nuevo_nodo;
+        oplist++;
     }
     else
     {
         //Para los demas elementos de la lista
         aux2->siguiente = nuevo_nodo;
+        oplist++;
     }
 
     nuevo_nodo->siguiente = aux1;
@@ -59,6 +63,7 @@ void Lista::ordenburbuja(Nodo** listn) {
             if (j->Dato > j->siguiente->Dato) {
                 swap(j->Dato, j->siguiente->Dato);
                 intercambiado = 1;
+                oplist++;
             }
         }
         if (intercambiado == 0)
@@ -104,6 +109,7 @@ Lista::Nodo* Lista::obtenerUltimoNodo(Nodo* listn)
     Nodo* temp = listn;
     while (temp != nullptr && temp->siguiente != nullptr) {
         temp = temp->siguiente;
+        oplist2++;
     }
     return temp;
 }
@@ -121,6 +127,7 @@ Lista::Nodo* Lista::particionar(Nodo* inicio, Nodo* fin, Nodo** nuevoInicio, Nod
             if (*nuevoInicio == nullptr) *nuevoInicio = actual;
             anterior = actual;
             actual = actual->siguiente;
+            oplist2++;
         }
         else {
             if (anterior) anterior->siguiente = actual->siguiente;
@@ -129,6 +136,7 @@ Lista::Nodo* Lista::particionar(Nodo* inicio, Nodo* fin, Nodo** nuevoInicio, Nod
             cola->siguiente = actual;
             cola = actual;
             actual = temp;
+            oplist2++;
         }
     }
 
@@ -150,7 +158,7 @@ void Lista::quickSortRecursivo(Nodo*& inicio, Nodo* fin)
         Nodo* temp = nuevoInicio;
         while (temp->siguiente != pivote) temp = temp->siguiente;
         temp->siguiente = nullptr;
-
+        oplist2++;
         quickSortRecursivo(nuevoInicio, temp);
 
         temp = obtenerUltimoNodo(nuevoInicio);
@@ -164,6 +172,7 @@ void Lista::quickSort(Nodo*& listn)
 {
     Nodo* fin = obtenerUltimoNodo(listn);
     quickSortRecursivo(listn, fin);
+    oplist2++;
 }
 
 void Lista::busquedafb(Nodo* lista, int n) // Busca los valores de la lista por fuerza bruta
@@ -179,16 +188,17 @@ void Lista::busquedafb(Nodo* lista, int n) // Busca los valores de la lista por 
         {
             cout << "Se ha encontrado el valor:  " << n << endl;
             ver = 1;
-            cout << "El numero de operaciones realizadas  por Fuerza Bruta fue: " << busqresfb << endl << endl;
+            //cout << "El numero de operaciones realizadas  por Fuerza Bruta fue: " << busqresfb << endl << endl;
         }
 
         aux1 = aux1->siguiente; //recorre el auxiliar
         busqresfb++;
+        oplist++;
     }
     if (ver == 0)
     {
         cout << "No se ha encontrado el valor:  " << n << " dentro de la lista :c" << endl;
-        cout << "El numero de operaciones realizadas  por Fuerza Bruta fue: " << x << endl << endl;
+        //cout << "El numero de operaciones realizadas  por Fuerza Bruta fue: " << x << endl << endl;
     }
 
 }
@@ -212,6 +222,7 @@ void Lista::burbuja(int arreglo[], int x) { //arreglo[] sera valor[x], y x sera 
                 arreglo[j] = arreglo[j + 1];
                 arreglo[j + 1] = temp;
                 huboIntercambio = true;
+                oplist3++;
             }
         }
 
@@ -229,26 +240,37 @@ bool Lista::binarySearch(int arr[], int left, int right, int b) // right sera la
 
         busqresbs++;
         int mid = left + (right - left) / 2;
-        cout << "Se ha encontrado el valor:  " << b << endl;
-        cout << "El numero de operaciones realizadas  por Fuerza Bruta fue: " << busqresbs << endl << endl;
         // Si el elemento está en el medio, lo encontramos
-        if (arr[mid] == x)
-
+        if (arr[mid] == x) {
+            oplist3++;
+            //cout << "Se ha encontrado el valor:  " << b << endl;
+            //cout << "El numero de operaciones realizadas  por Busqueda Binaria fue: " << busqresbs << endl << endl;
             return true;
+        }
 
         // Si el elemento es menor que mid, buscamos en la mitad izquierda
-        if (arr[mid] < x)
+        if (arr[mid] < x) {
+            oplist3++;
             left = mid + 1;
+        }
 
         // Si el elemento es mayor que mid, buscamos en la mitad derecha
-        else
+        else {
+            oplist3++;
             right = mid - 1;
+        }
     }
 
     // Si no lo encontramos, retornamos false
-    cout << "No se ha encontrado el valor:  " << b << " dentro de la lista :c" << endl;
-    cout << "El numero de operaciones realizadas  por Fuerza Bruta fue: " << busqresbs << endl << endl;
+    //cout << "No se ha encontrado el valor:  " << b << " dentro de la lista :c" << endl;
+    //cout << "El numero de operaciones realizadas  por Busqueda Binaria fue: " << x << endl << endl;
     return false;
+}
+
+void Lista::BusquedaBinaria(Nodo* lista, int numb)
+{
+    burbuja(i.valor, x); // El arreglo sera la estructura creada por Numal, Valor[]; y n sera el valor X de numal
+    binarySearch(i.valor, 0, x, numb); // right sera la variable x declarada en Numal y left sera 0
 }
 
 //-------------------------------------------------------------------------------
