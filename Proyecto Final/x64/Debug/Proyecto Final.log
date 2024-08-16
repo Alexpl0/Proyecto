@@ -1,2 +1,3 @@
 ﻿  Template C++.cpp
+C:\Users\jalej\OneDrive\Documentos\Programacion Avanzada\main\Proyecto\Proyecto Final\Template C++.cpp(8,8): warning C4091: '': ignored on left of 'Lista::Nodo' when no variable is declared
   Proyecto Final.vcxproj -> C:\Users\jalej\OneDrive\Documentos\Programacion Avanzada\main\Proyecto\x64\Debug\Proyecto Final.exe
